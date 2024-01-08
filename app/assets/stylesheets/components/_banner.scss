@@ -1,0 +1,37 @@
+.movie-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 400px;
+
+  /* Background image properties */
+  background-image: image-url('posters.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    position: relative;
+    color: white;
+    font-weight: 900;
+    font-size: 50px;
+  }
+
+  h4 {
+    position: relative;
+    color: white;
+   }
+}
+
+.movie-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
