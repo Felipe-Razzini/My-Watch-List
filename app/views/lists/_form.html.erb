@@ -1,4 +1,14 @@
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container form-container">
+  <br>
+  <h4><strong>Your new list</strong></h4>
+  <div class="new-list-form">
+    <%= simple_form_for(@list) do |f| %>
+      <div class="w-25">
+        <%= f.input :name %>
+      </div>
+      <div>
+        <%= f.button :submit, class: "btn btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container form-container">
+  <br>
+  <h4><strong>Your new list</strong></h4>
+  <%= form_with(model: @list, local: true) do |form| %>
+    <div class="movie-genres">
+      <% ["Action", "Sci-Fi", "Comedy", "Drama", "Horror", "Romance"].each do |genre| %>
+        <label class="genre-checkbox">
+          <%= form.check_box :genres, { multiple: true, id: "genre_#{genre.downcase}", class: 'hidden-checkbox' }, genre, nil %>
+          <div class="genre-box">
+            <%= genre.downcase %>
+          </div>
+        </label>
+      <% end %>
+    </div>
+    <div>
+      <%= form.submit "Create List", class: "btn btn-danger", id: "create-list-button" %>
+    </div>
+  <% end %>
+</div>

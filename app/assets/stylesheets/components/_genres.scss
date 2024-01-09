@@ -1,0 +1,36 @@
+.movie-genres {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.genre-checkbox {
+  position: relative;
+  margin: 10px;
+  font-weight: bolder;
+}
+
+.hidden-checkbox {
+  display: none;
+}
+
+.genre-box {
+  width: 100px;
+  height: 70px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.genre-box:hover {
+  transform: scale(1.1);
+  border-color: red;
+  color: red;
+}
+
+.genre-box.selected {
+  background-color: $red;
+  transition: 0.3s;
+  color: #fff;
+}
