@@ -5,5 +5,15 @@
 </div>
 
 <div class="list-container">
-
+  <h3><strong>MY LISTS</strong></h3>
+  <div class="row">
+    <% @lists.each do |list| %>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to list.name, list_path(list.id) %></h5>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
