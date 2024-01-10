@@ -3,10 +3,10 @@
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
         <h3>Add a movie to your <%= @list.name %> list</h3>
-        <%= simple_form_for [@list, @bookmark] do |f| %>
-          <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
-          <%= f.association :movie, prompt: "Select a movie" %>
-          <%= f.submit class: "btn btn-danger" %>
+       <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :movie_id, collection: @movies.map { |movie| [movie['original_title'], movie['id']] }, include_blank: 'Select a movie' %>
+          <%= f.submit "Submit bookmark", class: "btn btn-danger" %>
         <% end %>
       </div>
     </div>

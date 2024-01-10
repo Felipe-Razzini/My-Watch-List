@@ -1,17 +1,8 @@
+require 'json'
 require 'uri'
-require 'net/http'
 
-url = URI("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-
-request = Net::HTTP::Get.new(url)
-request["accept"] = 'application/json'
-request["Authorization"] = MOVIE_KEY
-
-response = http.request(request)
-movies = response.read_body
+response = RestClient.get 'http://tmdb.lewagon.com/movie/top_rated'
+movies = JSON.parse(response)
 
 puts 'Cleaning database...'
 Movie.destroy_all
