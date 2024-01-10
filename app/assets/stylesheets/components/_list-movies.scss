@@ -1,0 +1,17 @@
+.movie-search {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin-left: 30px;
+
+  .list-title {
+    color: white;
+    font-weight: 900;
+    font-size: 50px;
+  }
+
+  .add-movie-button {
+    display: flex;
+    align-items: center;
+  }
+}
