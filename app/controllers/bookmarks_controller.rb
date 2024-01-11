@@ -1,7 +1,5 @@
 class BookmarksController < ApplicationController
   before_action :load_tmdb_api_key
-  require 'uri'
-  require 'net/http'
 
   def new
     @list = List.find(params[:list_id])
@@ -13,10 +11,13 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
+    fetch_movies_from_tmdb
     if @bookmark.save
       redirect_to list_path(@list), notice: 'Bookmark was successfully created.'
+      puts "Redirecting to #{list_path(@list)}"
     else
-      fetch_movies_from_tmdb
+      puts "Bookmark validation failed with errors: #{params[:bookmark]}"
+      puts @bookmark.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
@@ -37,6 +38,9 @@ class BookmarksController < ApplicationController
   end
 
   def fetch_movies_from_tmdb
+    require 'uri'
+    require 'net/http'
+
     url = URI('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1')
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
@@ -47,5 +51,14 @@ class BookmarksController < ApplicationController
 
     response = http.request(request)
     @movies = JSON.parse(response.read_body)['results']
+
+    @movies.each do |movie|
+      Movie.find_or_create_by(
+        title: movie['original_title'],
+        overview: movie['overview'],
+        poster_url: "https://image.tmdb.org/t/p/w400#{movie['poster_path']}",
+        rating: movie['vote_average']
+      )
+    end
   end
 end

@@ -1,0 +1,27 @@
+.movie-card-list {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.movie-card-img-top {
+  height: 350px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.movie-card-body {
+  padding: 5px 10px;
+
+  h5 {
+    font-size: 15px;
+  }
+  p {
+    font-size: 12px;
+    text-align: justify;
+  }
+
+  .rating {
+    color: red;
+    font-weight: bold;
+  }
+}

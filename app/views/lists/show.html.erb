@@ -8,15 +8,15 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row m-5">
     <% @list.movies.each do |movie| %>
     <div class="col-lg-3 mb-4">
-      <div class="card-list">
-        <img class="card-img-top" src="<%= movie.poster_url %>" alt="Movie Poster">
-        <div class="card-body">
-          <h5 class="card-title"><%= movie.title %></h5>
-          <p class="card-text"><%= movie.overview %></p>
-          <p class="card-text">
+      <div class="movie-card-list">
+        <img class="movie-card-img-top" src="<%= movie.poster_url %>" alt="Movie Poster">
+        <div class="movie-card-body">
+          <h5 class="movie-card-title"><strong><%= movie.title %></strong></h5>
+          <p class="movie-card-text"><%= movie.overview %></p>
+          <p class="movie-card-text rating mb-0">
             <%= movie.rating.to_f %>
             <i class="fa-solid fa-star"></i>
           </p>
