@@ -7,16 +7,11 @@ body {
 }
 
 .footer {
-  // display: flex;
-  // justify-content: space-between;
-  // position: absolute;
-  // bottom: 0;
   width: 100%;
   padding: 20px 40px;
   text-align: center;
   align-items: center;
   margin-top: auto;
-  // margin-top: 60px;
   z-index: 0;
 
   .footer-body {
@@ -36,6 +31,11 @@ body {
       padding: 0px 5px;
       text-decoration: none;
       font-weight: 900;
+
+      &:hover {
+        color: red;
+        transition: 0.3s;
+      }
     }
   }
 }

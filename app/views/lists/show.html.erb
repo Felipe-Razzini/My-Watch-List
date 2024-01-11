@@ -1,4 +1,5 @@
 <div class="movies-container">
+  <%# Div with name of the list and button to add a new bookmark with a movie %>
   <div class="movie-search">
     <div class="list-title">
       <h2><%= @list.name.upcase %> MOVIES</h2>
@@ -8,6 +9,7 @@
     </div>
   </div>
 
+  <%# Displays all the movies selected by the user from TMDB %>
   <div class="row m-5">
     <% @list.movies.each do |movie| %>
     <div class="col-lg-3 mb-4 p-0">
