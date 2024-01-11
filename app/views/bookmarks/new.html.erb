@@ -7,7 +7,7 @@
         <h3>Add a movie to your <%= @list.name %> list</h3>
        <%= simple_form_for [@list, @bookmark] do |f| %>
           <%= f.input :comment %>
-          <%= f.input :movie_id, collection: @movies.map { |movie| [movie['original_title'], movie['id']] }, include_blank: 'Select a movie' %>
+          <%= f.association :movie, include_blank: 'Select a movie' %>
           <%= f.submit "Submit bookmark", class: "btn btn-danger" %>
         <% end %>
       </div>

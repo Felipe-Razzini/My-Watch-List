@@ -12,7 +12,7 @@
   <%# Displays all the movies selected by the user from TMDB %>
   <div class="row m-5">
     <% @list.movies.each do |movie| %>
-    <div class="col-lg-3 mb-4 p-0">
+    <div class="col-lg-3 m-4 p-0">
       <div class="movie-card-list">
         <img class="movie-card-img-top" src="<%= movie.poster_url %>" alt="Movie Poster">
         <div class="movie-card-body">
