@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin/index'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   root to: 'lists#index'
-
+  
   resources :lists, only: %i[index show new create destroy] do
     resources :bookmarks, only: %i[new create destroy]
   end
