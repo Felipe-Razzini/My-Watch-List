@@ -1,6 +1,25 @@
 .movie-card-list {
   background-color: white;
   border-radius: 8px;
+  position: relative;
+
+  .close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px 8px;
+    border-radius: 8px;
+    opacity: 0;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #FD1015;
+      color: white;
+      opacity: 1;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+    }
+  }
 }
 
 .movie-card-img-top {

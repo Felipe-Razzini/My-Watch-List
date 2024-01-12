@@ -18,19 +18,20 @@
 
 .card-title {
   text-decoration: none;
-  color: red;
+  color: white;
+  text-shadow:
+    1.5px 1.5px rgb(14, 14, 143);
 }
 
 .card {
-  background-color: white;
   text-align: center;
+  background-color: #FD1015;
   height: 100px;
   margin-bottom: 50px;
   margin: 0px 20px;
 
   h5 {
     text-align: center;
-    color: back;
     font-weight: bold;
     padding-top: 25px;
   }
