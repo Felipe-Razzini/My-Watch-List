@@ -15,7 +15,7 @@
     <div class="col-lg-3 m-4 p-0">
       <div class="movie-card-list">
         <img class="movie-card-img-top" src="<%= movie.poster_url %>" alt="Movie Poster">
-        <%= link_to "x", list_bookmark_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "close-icon" %>
+        <%= link_to "x", list_bookmark_path(@list, movie.bookmarks.find_by(list: @list)), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "close-icon" %>
         <div class="movie-card-body">
           <h5 class="movie-card-title"><strong><%= movie.title %></strong></h5>
           <p class="movie-card-text"><%= movie.overview %></p>
