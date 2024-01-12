@@ -9,14 +9,14 @@ class BookmarksController < ApplicationController
 
   def create
     @list = List.find(params[:list_id])
-    @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.list = @list
+    # @bookmark = Bookmark.new(bookmark_params)
+    @bookmark = @list.bookmarks.build(bookmark_params)
     if @bookmark.save
       redirect_to list_path(@list), notice: 'Bookmark was successfully created.'
-      puts "Redirecting to #{list_path(@list)}"
+      # puts "Redirecting to #{list_path(@list)}"
     else
-      puts "Bookmark validation failed with errors: #{params[:bookmark]}"
-      puts @bookmark.errors.full_messages
+      # puts "Bookmark validation failed with errors: #{params[:bookmark]}"
+      # puts @bookmark.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
