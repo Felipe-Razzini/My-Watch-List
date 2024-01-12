@@ -36,3 +36,21 @@
     padding-top: 25px;
   }
 }
+
+.close-icon-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px 8px;
+  border-radius: 8px;
+  opacity: 0;
+  text-decoration: none;
+
+  &:hover {
+    background-color: white;
+    color: #FD1015;
+    opacity: 1;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+}

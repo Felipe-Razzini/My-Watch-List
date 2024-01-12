@@ -11,8 +11,9 @@
     <% @lists.each do |list| %>
     <div class="col-sm-4">
       <div class="card">
+        <%= link_to "x", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "close-icon-list" %>
         <div class="card-body">
-          <h5><%= link_to list.name, list_path(list.id), class: "card-title" %></h5>
+          <h5><%= link_to list.name, list_path(list), class: "card-title" %></h5>
         </div>
       </div>
     </div>
